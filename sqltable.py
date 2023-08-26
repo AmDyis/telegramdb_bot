@@ -18,16 +18,6 @@ class Anime():
         with self.connection:
             self.cursor.execute("UPDATE anime SET rating = ? WHERE anime_id = ?", (anime_id, rating,))
 
-    # async def get_signup(self, anime_id):
-    #     with self.connection:
-    #         result = self.cursor.execute("SELECT signup FROM anime WHERE anime_id =?", (anime_id,)).fetchall()
-    #         for row in result:
-    #             signup = str(row[0])
-    #         return signup
-    #
-    # async def set_signup(self, anime_id, signup):
-    #     with self.connection:
-    #         return self.cursor.execute("UPDATE anime SET rating = ? WHERE anime_id = ?", (anime_id, signup,))
     async def del_anime(self, anime_id):
         with self.connection:
             self.cursor.execute("DELETE FROM anime WHERE anime_id = ?", (anime_id,))
