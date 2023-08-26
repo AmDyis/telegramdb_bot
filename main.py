@@ -33,45 +33,6 @@ async def add_anime(message: types.Message, bot: Bot):
     else:
         await message.answer("Такое уже есть")
 
-# @dp.callback_query(state = Product.anime_id)
-# async def add_anime_product(call: types.CallbackQuery):
-#     async with state.proxy() as data:
-#         data['type'] = call.data
-#     await call.message.answer("Напишите название аниме")
-#     await db.add_product(state)
-#     await Product.next()
-#
-# @dp.message(state = Product.rating)
-# async def add_anime_rating(message: types.Message):
-#     async with state.proxy() as data:
-#         data['rating'] = message.text
-#     await message.answer("Напишите рейтинг аниме")
-#     await db.add_product(state)
-#     await Product.next()
-#
-# @dp.message(state = Product.review)
-# async def add_anime_review(message: types.Message):
-#     async with proxy() as data:
-#         data['review'] = message.text
-#     await message.answer("Напишите обзор аниме")
-#     await db.add_product(message.text)
-
-# @dp.message(Command("rating"))
-# async def get_rating(message: types.Message):
-#     rating = message.text.split()[2]  # Получаем значение рейтинга из сообщения
-#     anime_id = message.text.split()[1]  # Получаем идентификатор аниме из сообщения
-#
-#     # Удаляем кавычки из начала и конца названия аниме, если они есть
-#     if anime_id.startswith("'") and anime_id.endswith("'"):
-#         anime_id = anime_id[1:-1]
-#     elif anime_id.startswith('"') and anime_id.endswith('"'):
-#         anime_id = anime_id[1:-1]
-#
-#     if db.anime_exists(anime_id):
-#         db.add_rating(anime_id, rating)
-#         await message.answer(f"Добавил рейтинг {rating} для аниме с идентификатором {anime_id}")
-#     else:
-#         await message.answer("Такого аниме не существует")
 
 @dp.message(Command("rating"))
 async def get_rating(message: types.Message):
