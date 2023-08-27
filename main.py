@@ -1,3 +1,6 @@
+# Это aiogram 3 -> не полностью рабочий
+
+
 import asyncio
 # import markup as nv
 import sqlalchemy as sa
