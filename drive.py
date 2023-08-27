@@ -1,3 +1,4 @@
+@aiogram 2 -> рабочий
 
 import os
 
